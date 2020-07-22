@@ -9,14 +9,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="ITJP" />
         <module name="playground" />
-        <module name="multiprocessor" />
         <module name="interview" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="interview" target="1.5" />
-      <module name="ITJP" target="8" />
-      <module name="multiprocessor" target="1.5" />
+      <module name="ITJP" target="7" />
+      <module name="multiprocessor" target="8" />
       <module name="playground" target="1.5" />
     </bytecodeTargetLevel>
   </component>
