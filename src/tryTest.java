@@ -110,7 +110,23 @@ public class tryTest {
     @Test
     public void test() {
         Solution s = new Solution();
-        System.out.println(s.longestPalindrome("aaaaabbbbaaaawaaca"));
-        
+
+    }
+
+    @Test
+    public void testString() {
+        StringBuilder s = new StringBuilder();
+        s.append('a');
+        s.append('a');
+        s.append('a');
+
+        System.out.println(s.toString());
+    }
+
+    @Test
+    public void testSearch() {
+        int[] nums = { 4, 5, 6, 0, 1, 2, 3 };
+
+        Solution.search(nums, 0);
     }
 }
