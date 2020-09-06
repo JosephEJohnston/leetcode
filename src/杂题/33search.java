@@ -1,3 +1,4 @@
+/*
 class Solution {
     public static int binSearch(int[] nums, int target, int left, int right) {
 
@@ -49,4 +50,4 @@ class Solution {
             return binSearch(nums, target, mid + 1, nums.length - 1);
 
     }
-}
+}*/

@@ -1,13 +1,18 @@
+/*
 import org.junit.Test;
+import 杂题.Solution;
 
 import java.util.HashMap;
 import java.util.Map;
 
+*/
 /**
  * 用于测试
- */
+ *//*
+
 public class tryTest {
-    /*public static void main(String[] args) {
+    */
+/*public static void main(String[] args) {
         Set<Character> curSet = new HashSet<Character>();
         Set<Character> tSet = new HashSet<Character>();
         Character[] str = new Character[3];
@@ -33,7 +38,8 @@ public class tryTest {
         System.out.println(str.toString());
         //System.out.println(new String(str));
         System.out.println(new String(s));
-    }*/
+    }*//*
+
 
     @Test
     public void testMap() {
@@ -55,18 +61,22 @@ public class tryTest {
         System.out.println(flag |= true);
     }
 
-    /*@Test
+    */
+/*@Test
     public void test79() {
         String word = "AB";
         char[][] board = {{'A', 'B'}};
 
         Solution.exist(board, word);
-    }*/
+    }*//*
 
-    /*@Test
+
+    */
+/*@Test
     public void test84() {
         System.out.println(Solution.largestRectangleArea2(new int[]{2, 1, 2}));
-    }*/
+    }*//*
+
 
     @Test
     public void test85() {
@@ -93,6 +103,7 @@ public class tryTest {
         System.out.println(1 ^ 1);
     }
 
+*/
 /*    @Test
     public void testSortList() {
         ListNode list = new ListNode(4);
@@ -105,7 +116,8 @@ public class tryTest {
         list = list.next;
 
         Solution.sortList(head);
-    }*/
+    }*//*
+
 
     @Test
     public void test() {
@@ -127,6 +139,7 @@ public class tryTest {
     public void testSearch() {
         int[] nums = { 4, 5, 6, 0, 1, 2, 3 };
 
-        Solution.search(nums, 0);
+        //Solution.search(nums, 0);
     }
 }
+*/

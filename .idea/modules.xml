@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/../clojure/clojure.iml" filepath="$PROJECT_DIR$/../clojure/clojure.iml" />
       <module fileurl="file://$PROJECT_DIR$/../interview/interview.iml" filepath="$PROJECT_DIR$/../interview/interview.iml" />
       <module fileurl="file://$PROJECT_DIR$/leetcode.iml" filepath="$PROJECT_DIR$/leetcode.iml" />
+      <module fileurl="file://E:/idea_projects/niuke/niuke.iml" filepath="E:/idea_projects/niuke/niuke.iml" />
       <module fileurl="file://$PROJECT_DIR$/../playground/playground.iml" filepath="$PROJECT_DIR$/../playground/playground.iml" />
       <module fileurl="file://$PROJECT_DIR$/../read_java_source/read_java_source.iml" filepath="$PROJECT_DIR$/../read_java_source/read_java_source.iml" />
     </modules>
