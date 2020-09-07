@@ -1,4 +1,4 @@
-package 精刷400;
+package 精刷400.array;
 
 class Solution189 {
     public void rotate(int[] nums, int k) {

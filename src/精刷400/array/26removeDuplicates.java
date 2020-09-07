@@ -1,4 +1,4 @@
-package 精刷400;
+package 精刷400.array;
 
 class Solution26 {
     public int removeDuplicates(int[] nums) {

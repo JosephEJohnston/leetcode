@@ -1,4 +1,4 @@
-package 精刷400;
+package 精刷400.array;
 
 import java.util.Deque;
 import java.util.LinkedList;
