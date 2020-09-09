@@ -7,17 +7,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ITJP" />
-        <module name="niuke" />
         <module name="playground" />
-        <module name="interview" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="interview" target="8" />
-      <module name="ITJP" target="8" />
+      <module name="interview" target="1.5" />
+      <module name="ITJP" target="7" />
       <module name="niuke" target="8" />
-      <module name="playground" target="8" />
+      <module name="playground" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
