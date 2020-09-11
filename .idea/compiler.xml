@@ -11,10 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="interview" target="1.5" />
-      <module name="ITJP" target="7" />
-      <module name="niuke" target="8" />
-      <module name="playground" target="1.5" />
+      <module name="playground" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

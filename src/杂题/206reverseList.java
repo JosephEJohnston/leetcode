@@ -1,4 +1,5 @@
-/*
+package 杂题;
+
 class ListNode {
     int val;
     ListNode next;
@@ -6,23 +7,24 @@ class ListNode {
 }
 
 
-class Solution {
-    public ListNode reverseList(ListNode head) {
-        ListNode hnode = new ListNode(-1);
-        ListNode tmp = null;
-
-        hnode.next = null;
-        while (head != null) {
-            tmp = head.next;
-
-            head.next = hnode.next;
-            hnode.next = head;
-
-            head = tmp;
+class Solution206 {
+    public ListNode recursion(ListNode head, ListNode succ) {
+        if (succ != null) {
+            ListNode tmp = succ.next;
+            succ.next = head;
+            return recursion(succ, tmp);
+        } else {
+            return head;
         }
+    }
 
-        return hnode.next;
+    public ListNode reverseList(ListNode head) {
+        ListNode tmp = null;
+        if (head != null) {
+            tmp = recursion(head, head.next);
+            head.next = null;
+        }
+        return tmp;
     }
 }
 
-*/
