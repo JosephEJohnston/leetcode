@@ -67,7 +67,9 @@ class Solution164 {
             maxi = Math.max(maxi, num);
         }
 
+        // 桶中元素的数量
         int bucketSize = Math.max(1, (maxi - mini) / (nums.length - 1));
+        // 桶的个数
         int bucketNum = (maxi - mini) / bucketSize + 1;
         Bucket[] buckets = new Bucket[bucketNum];
 
