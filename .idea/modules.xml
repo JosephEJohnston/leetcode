@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://E:/idea_projects/Java/Java.iml" filepath="E:/idea_projects/Java/Java.iml" />
       <module fileurl="file://$PROJECT_DIR$/../clojure/clojure.iml" filepath="$PROJECT_DIR$/../clojure/clojure.iml" />
       <module fileurl="file://$PROJECT_DIR$/leetcode.iml" filepath="$PROJECT_DIR$/leetcode.iml" />
       <module fileurl="file://$PROJECT_DIR$/../playground/playground.iml" filepath="$PROJECT_DIR$/../playground/playground.iml" />

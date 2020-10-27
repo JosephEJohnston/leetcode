@@ -1,5 +1,8 @@
 package 基本算法;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class QSort {
     public static void main(String[] args) {
         int[] a = new int[]{2, 8, 7, 1, 3, 5, 6, 4};
@@ -11,6 +14,7 @@ public class QSort {
         }
         System.out.println();
 
+        Map<String, Long> map = new HashMap<>(100, 0.75f);
     }
 
     public void sort(int[] a) {
