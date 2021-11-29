@@ -1,4 +1,4 @@
-package hot100;
+package hot100.easy;
 
 /**
  * 解法：

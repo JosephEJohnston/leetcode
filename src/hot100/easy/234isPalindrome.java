@@ -1,4 +1,6 @@
-package hot100;
+package hot100.easy;
+
+import hot100.ListNode;
 
 /**
  * Definition for singly-linked list.
