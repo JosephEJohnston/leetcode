@@ -1,13 +1,13 @@
-package hot100;
+package structure;
 
 /**
  * Definition for singly-linked list.
- * public class ListNode {
+ * public class structure.ListNode {
  *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ *     structure.ListNode next;
+ *     structure.ListNode() {}
+ *     structure.ListNode(int val) { this.val = val; }
+ *     structure.ListNode(int val, structure.ListNode next) { this.val = val; this.next = next; }
  * }
  */
 

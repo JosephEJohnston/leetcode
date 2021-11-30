@@ -1,21 +1,21 @@
 /*
 
-class ListNode {
+class structure.ListNode {
     int val;
-    ListNode next;
-    ListNode() {}
-    ListNode(int val) { this.val = val; }
-    ListNode(int val, ListNode next) {
+    structure.ListNode next;
+    structure.ListNode() {}
+    structure.ListNode(int val) { this.val = val; }
+    structure.ListNode(int val, structure.ListNode next) {
         this.val = val;
         this.next = next;
     }
 }
 
 class Solution {
-    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        ListNode zero = new ListNode(0);
-        ListNode list = new ListNode(0);
-        ListNode head = list;
+    public structure.ListNode mergeTwoLists(structure.ListNode l1, structure.ListNode l2) {
+        structure.ListNode zero = new structure.ListNode(0);
+        structure.ListNode list = new structure.ListNode(0);
+        structure.ListNode head = list;
 
         if (l1 == null)
             return l2;

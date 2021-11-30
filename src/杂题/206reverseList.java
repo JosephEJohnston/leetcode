@@ -1,16 +1,17 @@
+/*
 package 杂题;
 
-class ListNode {
+public class structure.ListNode {
     int val;
-    ListNode next;
-    ListNode(int x) {val = x;}
+    structure.ListNode next;
+    structure.ListNode(int x) {val = x;}
 }
 
 
 class Solution206 {
-    public ListNode recursion(ListNode head, ListNode succ) {
+    public structure.ListNode recursion(structure.ListNode head, structure.ListNode succ) {
         if (succ != null) {
-            ListNode tmp = succ.next;
+            structure.ListNode tmp = succ.next;
             succ.next = head;
             return recursion(succ, tmp);
         } else {
@@ -18,8 +19,8 @@ class Solution206 {
         }
     }
 
-    public ListNode reverseList(ListNode head) {
-        ListNode tmp = null;
+    public structure.ListNode reverseList(structure.ListNode head) {
+        structure.ListNode tmp = null;
         if (head != null) {
             tmp = recursion(head, head.next);
             head.next = null;
@@ -28,3 +29,4 @@ class Solution206 {
     }
 }
 
+*/

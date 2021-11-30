@@ -2,10 +2,10 @@ import java.util.ArrayList;
 /*
 import java.util.List;
 
-class ListNode {
+class structure.ListNode {
     int val;
-    ListNode next;
-    ListNode(int x) {
+    structure.ListNode next;
+    structure.ListNode(int x) {
         val = x;
         next = null;
     }
@@ -14,13 +14,13 @@ class ListNode {
 class Solution {
 */
 /*    //算法 1：暴力法
-    public boolean hasCycle(ListNode head) {
+    public boolean hasCycle(structure.ListNode head) {
         if (head == null)
             return false;
 
-        List<ListNode> list = new ArrayList<>();
+        List<structure.ListNode> list = new ArrayList<>();
         while (head != null) {
-            for (ListNode listNode : list) {
+            for (structure.ListNode listNode : list) {
                 if (head == listNode)
                     return true;
             }
@@ -34,11 +34,11 @@ class Solution {
 
 
     //算法 2：快慢指针
-    public boolean hasCycle(ListNode head) {
+    public boolean hasCycle(structure.ListNode head) {
         if (head == null)
             return false;
 
-        ListNode slow = head, fast = head;
+        structure.ListNode slow = head, fast = head;
         while (fast != null) {
             slow = slow.next;
             fast = fast.next;

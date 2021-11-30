@@ -4,10 +4,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-class ListNode {
+class structure.ListNode {
     int val;
-    ListNode next;
-    ListNode(int x) {
+    structure.ListNode next;
+    structure.ListNode(int x) {
         val = x;
         next = null;
     }
@@ -16,11 +16,11 @@ class ListNode {
 class Solution {
     //算法 1：哈希集
 */
-/*    public ListNode detectCycle(ListNode head) {
+/*    public structure.ListNode detectCycle(structure.ListNode head) {
         if (head == null)
             return null;
 
-        Set<ListNode> set = new HashSet<>();
+        Set<structure.ListNode> set = new HashSet<>();
         while (head != null) {
             if (set.contains(head))
                 return head;
@@ -34,11 +34,11 @@ class Solution {
 
 
     //算法 2：Floyd 算法（双指针法）
-    public ListNode detectCycle(ListNode head) {
+    public structure.ListNode detectCycle(structure.ListNode head) {
         if (head == null)
             return null;
 
-        ListNode slow = head, fast = head;
+        structure.ListNode slow = head, fast = head;
         while (fast != null) {
             slow = slow.next;
             fast = fast.next;

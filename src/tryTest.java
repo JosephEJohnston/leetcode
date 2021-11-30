@@ -106,13 +106,13 @@ public class tryTest {
 */
 /*    @Test
     public void testSortList() {
-        ListNode list = new ListNode(4);
-        ListNode head = list;
-        list.next = new ListNode(2);
+        structure.ListNode list = new structure.ListNode(4);
+        structure.ListNode head = list;
+        list.next = new structure.ListNode(2);
         list = list.next;
-        list.next = new ListNode(1);
+        list.next = new structure.ListNode(1);
         list = list.next;
-        list.next = new ListNode(3);
+        list.next = new structure.ListNode(3);
         list = list.next;
 
         Solution.sortList(head);

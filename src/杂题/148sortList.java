@@ -2,20 +2,20 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-/*class ListNode {
+/*class structure.ListNode {
     int val;
-    ListNode next;
-    ListNode(int x) { val = x; }
+    structure.ListNode next;
+    structure.ListNode(int x) { val = x; }
 }
 
 class Solution {
-*//*    public ListNode sortList(ListNode head) {
+*//*    public structure.ListNode sortList(structure.ListNode head) {
         if (head == null)
             return null;
 
-        List<ListNode> list = new ArrayList<>();
+        List<structure.ListNode> list = new ArrayList<>();
 
-        ListNode tmp = head;
+        structure.ListNode tmp = head;
         while (tmp != null) {
             list.add(tmp);
             tmp = tmp.next;
@@ -29,7 +29,7 @@ class Solution {
             return -1;
         });
         tmp = list.get(0);
-        ListNode h = tmp;
+        structure.ListNode h = tmp;
         for (int i = 1; i < list.size(); i++) {
             tmp.next = list.get(i);
             tmp = list.get(i);
@@ -39,14 +39,14 @@ class Solution {
         return h;
     }*//*
 
-    private static ListNode recursion(ListNode head, int count) {
+    private static structure.ListNode recursion(structure.ListNode head, int count) {
         if (head == null || count == 0)
             return null;
         else if (count == 1) {
             return head;
         }
 
-        ListNode tmp = head;
+        structure.ListNode tmp = head;
         int div = 0;
         while (div < count / 2) {
             tmp = tmp.next;
@@ -55,20 +55,20 @@ class Solution {
 
         head = recursion(head, div);
         tmp = recursion(tmp, count - div);
-        ListNode front = new ListNode(-1), ptrF = front;
-        ListNode left = head, right = tmp;
+        structure.ListNode front = new structure.ListNode(-1), ptrF = front;
+        structure.ListNode left = head, right = tmp;
         int dLeft = div, dRight = count-div;
         while (dLeft > 0 || dRight > 0) {
             if ((dRight > 0 && dLeft == 0) ||
                     (dRight > 0 && dLeft > 0 &&
                             left.val > right.val)) {
-                front.next = new ListNode(right.val);
+                front.next = new structure.ListNode(right.val);
                 right = right.next;
                 dRight--;
             } else if ((dLeft > 0 && dRight == 0) ||
                     (dRight > 0 && dLeft > 0 &&
                             left.val <= right.val)){
-                front.next = new ListNode(left.val);
+                front.next = new structure.ListNode(left.val);
                 left = left.next;
                 dLeft--;
             }
@@ -78,11 +78,11 @@ class Solution {
         return ptrF.next;
     }
 
-    public static ListNode sortList(ListNode head) {
+    public static structure.ListNode sortList(structure.ListNode head) {
         if (head == null)
             return null;
 
-        ListNode tmp = head;
+        structure.ListNode tmp = head;
         int count = 0;
         while (tmp != null) {
             count++;
