@@ -2,7 +2,7 @@ package hot100.middle;
 
 class Solution221 {
     // 暴力法（超时）：
-    public int maximalSquare(char[][] matrix) {
+    /*public int maximalSquare(char[][] matrix) {
         int max = 0;
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
@@ -44,5 +44,14 @@ class Solution221 {
         }
 
         return true;
+    }*/
+
+    public int maximalSquare(char[][] matrix) {
+        int xLen = matrix.length;
+        int yLen = matrix[0].length;
+
+        int[][] dp = new int[xLen][yLen];
+
+
     }
 }
