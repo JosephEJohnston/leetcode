@@ -1,8 +1,10 @@
+/*
 package 精刷400.tree;
 
 import javafx.util.Pair;
 import 精刷400.tree.Solution100;
 
+*/
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -17,7 +19,8 @@ import 精刷400.tree.Solution100;
  *         this.right = right;
  *     }
  * }
- */
+ *//*
+
 class Solution110 {
     private static class TreeNode {
         int val;
@@ -48,4 +51,4 @@ class Solution110 {
     public boolean isBalanced(TreeNode root) {
         return height(root) >= 0;
     }
-}
+}*/
