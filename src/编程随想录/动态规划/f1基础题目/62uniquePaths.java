@@ -45,31 +45,21 @@ class Solution62 {
         int cUp = m - 1;
         int cDown = m + n - 2;
 
-        int sumN = 1, sumD = 1;
+        int count = cUp;
+        long sumN = 1;
 
-        while (cUp > 0) {
+        while (count > 0) {
             sumN *= cDown;
-            sumD *= cUp;
-            cUp--;
-            cDown--;
 
-            int guessCommonFactor = guessCommonFactor(sumN, sumD);
-            sumN /= guessCommonFactor;
-            sumD /= guessCommonFactor;
-        }
-
-        return sumN / sumD;
-    }
-
-    private int guessCommonFactor(int m, int n) {
-        int[] commonFactor = new int[]{ 30, 15, 10, 6, 5, 3, 2 };
-
-        for (int factor : commonFactor) {
-            if (m % factor == 0 && n % factor == 0) {
-                return factor;
+            while (cUp > 0 && sumN % cUp == 0) {
+                sumN /= cUp;
+                cUp--;
             }
+
+            count--;
+            cDown--;
         }
 
-        return 1;
+        return (int) sumN;
     }
 }
