@@ -38,43 +38,38 @@ class Solution62 {
     public static void main(String[] args) {
         Solution62 solution62 = new Solution62();
 
-        System.out.println(solution62.productNumerator(9, 18));
-        System.out.println(solution62.productDenominator(9));
-        System.out.println(solution62.productNumerator(9, 18) /
-                solution62.productDenominator(9));
-
-        System.out.println(362880 * 1276);
+        System.out.println(solution62.uniquePaths(23, 13));
     }
 
     public int uniquePaths(int m, int n) {
         int cUp = m - 1;
         int cDown = m + n - 2;
 
-        return productNumerator(cUp, cDown) / productDenominator(cUp);
-    }
-
-    public int productNumerator (int cUp, int cDown) {
-        int sum = 1;
+        int sumN = 1, sumD = 1;
 
         while (cUp > 0) {
-            System.out.println("--" + cDown + "--");
-            sum *= cDown;
+            sumN *= cDown;
+            sumD *= cUp;
             cUp--;
             cDown--;
+
+            int guessCommonFactor = guessCommonFactor(sumN, sumD);
+            sumN /= guessCommonFactor;
+            sumD /= guessCommonFactor;
         }
 
-        return sum;
+        return sumN / sumD;
     }
 
-    public int productDenominator(int cUp) {
-        int sum = 1;
+    private int guessCommonFactor(int m, int n) {
+        int[] commonFactor = new int[]{ 30, 15, 10, 6, 5, 3, 2 };
 
-        while (cUp > 0) {
-            System.out.println("--" + cUp + "--");
-            sum *= cUp;
-            cUp--;
+        for (int factor : commonFactor) {
+            if (m % factor == 0 && n % factor == 0) {
+                return factor;
+            }
         }
 
-        return sum;
+        return 1;
     }
 }
