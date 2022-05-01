@@ -3,6 +3,11 @@ package 编程随想录.动态规划.f2背包问题;
 class Solution416 {
     // 如何暴力破解？回溯当然可以
     // 0-1 背包变体，依旧很难
+
+    /**
+     * 为什么能分解成背包问题？
+     * <p>将容量转换为目标的切割值，如果能容下切割值就代表能切分为两半</p>
+     */
     public boolean canPartition(int[] nums) {
         int sum = 0;
         for (int num : nums) {
@@ -17,11 +22,13 @@ class Solution416 {
 
         int[][] dp = new int[nums.length][target + 1];
 
+        // 初始化，先装第 1 个数
         for (int i = nums[0]; i <= target; i++) {
             dp[0][i] = nums[0];
         }
 
         // i 是数组，j 是容量
+        // 从第 2 个数装起
         for (int i = 1; i < nums.length; i++) {
             for (int j = 0; j <= target; j++) {
                 // 背包容量可以容纳 nums[i]
@@ -43,13 +50,6 @@ class Solution416 {
             }
         }
 
-        for (int[] ints : dp) {
-            for (int anInt : ints) {
-                System.out.print(anInt + " ");
-            }
-            System.out.println();
-        }
-
         return dp[nums.length - 1][target] == target;
     }
 
@@ -57,6 +57,7 @@ class Solution416 {
         Solution416 solution416 = new Solution416();
 
         /*
+        nums = [2, 2, 1, 1];
         wrong:
         0 0 2 2
         0 0 2 2
