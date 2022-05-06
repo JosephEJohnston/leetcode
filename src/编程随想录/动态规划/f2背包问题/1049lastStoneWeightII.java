@@ -22,24 +22,11 @@ class Solution1049 {
         for (int i = 1; i < stones.length; i++) {
             for (int j = 0; j < target + 1; j++) {
                 if (j >= stones[i]) {
-                    dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - stones[i]] + stones[i]);
+                    dp[i][j] = Math.max(dp[i - 1][j], dp[i - 1][j - stones[i]] + stones[i]);
                 } else {
                     dp[i][j] = dp[i - 1][j];
                 }
             }
-        }
-
-        System.out.println(target);
-        for (int i = 0; i < target + 1; i++) {
-            System.out.printf("%5d ", i);
-        }
-        System.out.println();
-
-        for (int[] ints : dp) {
-            for (int anInt : ints) {
-                System.out.printf("%5d ", anInt);
-            }
-            System.out.println();
         }
 
         return sum - dp[stones.length - 1][target] * 2;
