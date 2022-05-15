@@ -13,10 +13,10 @@ class Solution377 {
                 }
             }
 
-            for (int value : dp) {
+            /*for (int value : dp) {
                 System.out.printf("%5d ", value);
             }
-            System.out.println();
+            System.out.println();*/
         }
 
         return dp[target];
