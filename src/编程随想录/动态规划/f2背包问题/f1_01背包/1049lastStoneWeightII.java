@@ -1,4 +1,4 @@
-package 编程随想录.动态规划.f2背包问题;
+package 编程随想录.动态规划.f2背包问题.f1_01背包;
 
 class Solution1049 {
     /*
