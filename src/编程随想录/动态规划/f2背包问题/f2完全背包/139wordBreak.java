@@ -15,8 +15,7 @@ class Solution139 {
         for (int i = 1; i < dp.length; i++) {
             for (String word : wordDict) {
                 if (!dp[i] && i >= word.length()) {
-                    dp[i] = dp[i - word.length()] &&
-                            (dp[i] || equalWord(i, s, word));
+                    dp[i] = dp[i - word.length()] && equalWord(i, s, word);
                 }
             }
         }
