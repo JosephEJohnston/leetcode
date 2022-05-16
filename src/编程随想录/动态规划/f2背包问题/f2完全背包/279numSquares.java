@@ -14,10 +14,10 @@ class Solution279 {
         Arrays.fill(dp, Integer.MAX_VALUE);
         dp[0] = 0;
 
-        for (int num : nums) {
-            int square = num * num;
-            for (int j = num; j < dp.length; j++) {
-                if (j >= square && dp[j - square] != Integer.MAX_VALUE) {
+        for (int i = 1; i * i <= n; i++) {
+            int square = i * i;
+            for (int j = square; j < dp.length; j++) {
+                if (dp[j - square] != Integer.MAX_VALUE) {
                     dp[j] = Math.min(dp[j], dp[j - square] + 1);
                 }
             }
