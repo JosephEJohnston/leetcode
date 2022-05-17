@@ -37,12 +37,12 @@ class Solution337 {
         int[] right = robTree(cur.right);
 
         // 偷 cur
-        int val1 = cur.val + left[0] + right[0];
+        int stealCur = cur.val + left[0] + right[0];
 
         // 不偷 cur
-        int val2 = Math.max(left[0], left[1]) +
+        int not = Math.max(left[0], left[1]) +
                 Math.max(right[0], right[1]);
 
-        return new int[]{val2, val1};
+        return new int[]{not, stealCur};
     }
 }
