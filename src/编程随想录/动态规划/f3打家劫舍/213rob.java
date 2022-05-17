@@ -5,37 +5,22 @@ class Solution213 {
     public int rob(int[] nums) {
         if (nums.length == 1) {
             return nums[0];
+        } else if (nums.length == 2) {
+            return Math.max(nums[0], nums[1]);
         }
 
-        int[] dp = new int[nums.length];
-        boolean[] first = new boolean[nums.length];
+        return Math.max(robSub(0, nums.length - 1, nums),
+                robSub(1, nums.length, nums));
+    }
 
-        dp[0] = nums[0];
-        first[0] = true;
+    private int robSub(int start, int end, int[] nums) {
+        int[] dp = new int[end - start];
 
-        if (nums[1] > nums[0]) {
-            dp[1] = nums[1];
-        } else {
-            dp[1] = nums[0];
-            first[1] = true;
-        }
+        dp[0] = nums[start];
+        dp[1] = Math.max(nums[start], nums[start + 1]);
 
         for (int i = 2; i < dp.length; i++) {
-            for (int j = 2; j <= i; j++) {
-                int otherValue = dp[j - 2] + nums[j];
-                if (dp[i - 1] > otherValue) {
-                    dp[i] = dp[i - 1];
-                    first[i] = first[i - 1];
-                } else {
-                    dp[i] = dp[j - 2] + nums[j];
-                    first[i] = first[j - 2];
-                }
-            }
-        }
-
-
-        if (first[first.length - 1]) {
-            return Math.max(dp[dp.length - 2], dp[dp.length - 1] - nums[0]);
+            dp[i] = Math.max(dp[i - 1], dp[i - 2] + nums[start + i]);
         }
 
         return dp[dp.length - 1];
@@ -44,6 +29,8 @@ class Solution213 {
     public static void main(String[] args) {
         Solution213 solution213 = new Solution213();
 
-        solution213.rob(new int[]{1, 1, 1, 2});
+        int rob = solution213.rob(new int[]{1, 1, 1, 2});
+
+        System.out.println(rob);
     }
 }
