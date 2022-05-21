@@ -1,6 +1,10 @@
 package 编程随想录.动态规划.f4股票问题;
 
 class Solution309 {
+    /**
+     * 重点是多个状态，和状态之间的转移
+     * 不好理解
+     */
     public int maxProfit(int[] prices) {
         int n = prices.length;
 
