@@ -13,7 +13,9 @@ class Solution647 {
         boolean[][] dp = new boolean[chars.length][chars.length];
 
         int result = 0;
+        // 一定要从下到上，从左到右遍历，这样保证 dp[i+1][j-1] 都是经过计算的
         for (int i = chars.length - 1; i >= 0; i--) {
+            // 由于 j 的定义，其必然大于等于 i
             for (int j = i; j < chars.length; j++) {
                 if (chars[i] == chars[j]) {
                     if (j - i <= 1) {
@@ -36,5 +38,11 @@ class Solution647 {
         }
 
         return result;
+    }
+
+    public static void main(String[] args) {
+        Solution647 solution647 = new Solution647();
+
+        solution647.countSubstrings("ababac");
     }
 }
