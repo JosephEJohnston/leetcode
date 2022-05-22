@@ -27,12 +27,6 @@ class Solution115 {
             }
         }
 
-        for (int[] ints : dp) {
-            for (int anInt : ints) {
-                System.out.printf("%5d ", anInt);
-            }
-            System.out.println();
-        }
 
         return dp[sChars.length][tChars.length];
     }
