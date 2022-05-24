@@ -8,22 +8,19 @@ class Solution739 {
     // 看答案，先理解单调栈模型
     public int[] dailyTemperatures(int[] temperatures) {
         Deque<Integer> st = new LinkedList<>();
-        int[] result = new int[temperatures.length];
+        int n = temperatures.length;
+        int[] result = new int[n];
 
         st.push(0);
 
-        for (int i = 1; i < temperatures.length; i++) {
-            if (temperatures[i] < temperatures[st.peek()]) {
-                st.push(i);
-            } else if (temperatures[i] == temperatures[st.peek()]) {
-                st.push(i);
-            } else {
+        for (int i = 1; i < n; i++) {
+            if (temperatures[i] > temperatures[st.peek()]) {
                 while (!st.isEmpty() && temperatures[i] > temperatures[st.peek()]) {
                     result[st.peek()] = i - st.peek();
                     st.pop();
                 }
-                st.push(i);
             }
+            st.push(i);
         }
 
         return result;
