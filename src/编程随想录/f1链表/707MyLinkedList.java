@@ -2,22 +2,23 @@ package 编程随想录.f1链表;
 
 // 想想怎么传 head
 // 不好设计，看答案
-class ListNode {
+class Node {
     int val;
-    ListNode next;
-    ListNode() {};
-    ListNode(int val) {
+    Node next;
+
+    Node(int val) {
         this.val = val;
     }
 }
 
 class MyLinkedList {
+
+    Node head;
     int size;
-    ListNode head;
 
     public MyLinkedList() {
-        size = 0;
-        head = new ListNode(0);
+        this.size = 0;
+        head = new Node(-1);
     }
 
     public int get(int index) {
@@ -25,12 +26,11 @@ class MyLinkedList {
             return -1;
         }
 
-        ListNode currentNode = head;
+        Node cur = head;
         for (int i = 0; i <= index; i++) {
-            currentNode = currentNode.next;
+            cur = cur.next;
         }
-
-        return currentNode.val;
+        return cur.val;
     }
 
     public void addAtHead(int val) {
@@ -50,28 +50,46 @@ class MyLinkedList {
             index = 0;
         }
 
-        size++;
-        ListNode pred = head;
+        Node cur = head;
         for (int i = 0; i < index; i++) {
-            pred = pred.next;
+            cur = cur.next;
         }
 
-        ListNode toAdd = new ListNode(val);
-        toAdd.next = pred.next;
-        pred.next = toAdd;
+        Node node = new Node(val);
+        node.next = cur.next;
+        cur.next = node;
+
+        size++;
     }
 
     public void deleteAtIndex(int index) {
-        if (index < 0 || index >= size) {
+        if (size == 0 || index >= size) {
             return;
         }
 
-        size--;
-        ListNode pred = head;
+        Node cur = head;
         for (int i = 0; i < index; i++) {
-            pred = pred.next;
+            cur = cur.next;
         }
-        pred.next = pred.next.next;
+        cur.next = cur.next.next;
+
+        size--;
+    }
+
+    public static void main(String[] args) {
+        MyLinkedList list = new MyLinkedList() ;
+
+        list.addAtHead(2);
+        list.deleteAtIndex(1);
+        list.addAtHead(2);
+        list.addAtHead(7);
+        list.addAtHead(3);
+        list.addAtHead(2);
+        list.addAtHead(5);
+        list.addAtTail(5);
+        System.out.println(list.get(5));
+        list.deleteAtIndex(6);
+        list.deleteAtIndex(4);
     }
 }
 
