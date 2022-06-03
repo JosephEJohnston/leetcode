@@ -17,18 +17,18 @@ class Solution28 {
 
         int[] next = getNext(needle);
 
-        int j = -1;
+        int j = 0;
         for (int i = 0; i < haystack.length(); i++) {
-            while (j >= 0 && haystack.charAt(i) != needle.charAt(j + 1)) {
-                j = next[j];
+            while (j > 0 && haystack.charAt(i) != needle.charAt(j)) {
+                j = next[j - 1];
             }
 
-            if (haystack.charAt(i) == needle.charAt(j + 1)) {
+            if (haystack.charAt(i) == needle.charAt(j)) {
                 j++;
             }
 
-            if (j == (needle.length() - 1)) {
-                return (i - needle.length() + 1);
+            if (j == needle.length()) {
+                return (i - needle.length()) + 1;
             }
         }
 
@@ -39,17 +39,17 @@ class Solution28 {
     private int[] getNext(String s) {
         int[] next = new int[s.length()];
 
-        int j = -1;
+        int j = 0;
         next[0] = j;
 
         for (int i = 1; i < s.length(); i++) {
             // 若前后缀不相同，则向前回退
-            while (j >= 0 && s.charAt(i) != s.charAt(j + 1)) {
-                j = next[j];
+            while (j > 0 && s.charAt(i) != s.charAt(j)) {
+                j = next[j - 1];
             }
 
             // 前后缀相同
-            if (s.charAt(i) == s.charAt(j + 1)) {
+            if (s.charAt(i) == s.charAt(j)) {
                 j++;
             }
 
