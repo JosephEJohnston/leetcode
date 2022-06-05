@@ -5,8 +5,8 @@ import java.util.LinkedList;
 
 class MyQueue {
 
-    private Deque<Integer> fStack;
-    private Deque<Integer> sStack;
+    private final Deque<Integer> fStack;
+    private final Deque<Integer> sStack;
 
     public MyQueue() {
         this.fStack = new LinkedList<>();
@@ -18,41 +18,24 @@ class MyQueue {
     }
 
     public int pop() {
-        if (fStack.isEmpty()) {
-            return -1;
+        if (sStack.isEmpty()) {
+            while (!fStack.isEmpty()) {
+                sStack.push(fStack.pop());
+            }
         }
 
-        while (!fStack.isEmpty()) {
-            sStack.push(fStack.pop());
-        }
-
-        int top = sStack.pop();
-        while (!sStack.isEmpty()) {
-            fStack.push(sStack.pop());
-        }
-
-        return top;
+        return sStack.pop();
     }
 
     public int peek() {
-        if (fStack.isEmpty()) {
-            return -1;
-        }
+        int res = pop();
+        sStack.push(res);
 
-        while (!fStack.isEmpty()) {
-            sStack.push(fStack.pop());
-        }
-
-        int top = sStack.peek();
-        while (!sStack.isEmpty()) {
-            fStack.push(sStack.pop());
-        }
-
-        return top;
+        return res;
     }
 
     public boolean empty() {
-        return fStack.isEmpty();
+        return fStack.isEmpty() && sStack.isEmpty();
     }
 }
 
