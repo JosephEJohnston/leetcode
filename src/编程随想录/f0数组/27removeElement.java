@@ -1,20 +1,21 @@
 package 编程随想录.f0数组;
 
 class Solution27 {
+    // 没什么难的
     public int removeElement(int[] nums, int val) {
-        if (nums.length == 0) {
-            return nums.length;
-        }
+        int curIndex = 0;
+        int length = 0;
 
-        int leftp = 0, rightp = 0;
-        while (rightp < nums.length) {
-            if (nums[rightp] != val) {
-                nums[leftp]= nums[rightp];
-                leftp++;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == val) {
+                continue;
             }
-            rightp++;
+
+            nums[curIndex] = nums[i];
+            curIndex++;
+            length++;
         }
 
-        return leftp;
+        return length;
     }
 }
