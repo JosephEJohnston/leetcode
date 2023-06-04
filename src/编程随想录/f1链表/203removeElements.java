@@ -13,23 +13,30 @@ import structure.ListNode;
  * }
  */
 class Solution203 {
+    /*
+     * 2023/6/4:
+     * 个人新写法，哨兵节点操作即可，若进行了删除再移动哨兵节点
+     */
     public ListNode removeElements(ListNode head, int val) {
-        ListNode first = new ListNode(-1, head);
-        ListNode before = first;
-        ListNode cur = head;
+        if (head == null) {
+            return head;
+        }
 
-        while (cur != null) {
-            if (cur.val == val) {
-                before.next = cur.next;
-                cur.next = null;
-                cur = before.next;
+        ListNode newHead = new ListNode(-1);
+        ListNode record = newHead;
+        newHead.next = head;
+
+        while (newHead != null && newHead.next != null) {
+            ListNode nextNode = newHead.next;
+
+            if (nextNode.val == val) {
+                newHead.next = nextNode.next;
             } else {
-                before = cur;
-                cur = cur.next;
+                newHead = newHead.next;
             }
         }
 
-        return first.next;
+        return record.next;
     }
 
     public static void main(String[] args) {
